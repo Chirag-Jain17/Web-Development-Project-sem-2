@@ -1,0 +1,8 @@
+:root {
+    --primary-color: #762124;
+    /* Shade of white for the background of all pages */
+    --whitespace-color: rgb(240,240,240);
+    --footer-color: rgb(210,210,210);
+    /* Font Awesome icons color, so that they don't become blue by being inside an <a> tag*/
+    --fa-color: rgb(50,50,50);
+  }

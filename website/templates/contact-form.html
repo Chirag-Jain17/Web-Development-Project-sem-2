@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="author" content="co-authored by: Petros Papatheodorou, Giannis Baltas">
+    <meta name="description" content="UniStud - Massive Open Online Courses demo website, created for the Web Programming course, at AUEB">
+    <link rel="shortcut icon" type="image/png" href="../../res/pictures/logo.png">
+    <title>UniStud: Your online university!</title> 
+
+    <link rel="stylesheet" href="../css/standard.css">
+    <link rel="stylesheet" href="../../res/font-awesome-4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+    <header id="header"></header>
+
+    <main class="contact-us" id="banner">
+      <h1>Contact Us!</h1>
+      <p>If you have any questions, suggestions or bugs to report, don't hesitate to do so in the form below!</p>
+      <!-- We define the action(mailto) with a button click listener for better control of the email and what we print to the user-->
+      <form action="" id="contact-form" class="narrow-centered">
+        <div class="inner-form">
+          <div class="success-msg-container invisible">
+            <span id="success-msg-element" class="success-msg"></span>
+          </div>
+          <fieldset>
+            <legend>Personal Information</legend>
+            <div class="inner-fieldset">
+              <div>
+                <label for="title">Title:</label>
+                <select name="title" id="title" class="simple-select">
+                  <option value="">None</option>
+                  <option value="Mr.">Mr.</option>
+                  <option value="Mrs.">Mrs.</option>
+                  <option value="Ms.">Ms.</option>
+                </select>
+              </div>
+              <div class="input-container">
+                <input type="text" name="fname" id="fname" onchange="onInputChange(this)" class="input-effect" required>
+                <label class="required" for="fname">First Name</label>
+                <span class="focus-border">
+                  <i></i>
+                </span>
+              </div> 
+              <div class="input-container">
+                <input type="text" name="mname" id="mname" onchange="onInputChange(this)" class="input-effect">
+                <label for="mname">Middle Name</label>
+                <span class="focus-border">
+                  <i></i>
+                </span>
+              </div> 
+              <div class="input-container">
+                <input type="text" name="lname" id="lname" onchange="onInputChange(this)" class="input-effect" required>
+                <label for="lname" class="required">Last Name</label>
+                <span class="focus-border">
+                  <i></i>
+                </span>
+              </div> 
+            </div>
+          </fieldset>
+          <div class="inline-fieldset-container">
+            <fieldset class="l-half-fieldset">
+              <legend>Contact Information</legend>
+              <div class="inner-fieldset">
+                <div class="radiobuttons">
+                  <div>
+                    <input type="radio" id="email-radio" name="contact-radio" value="email" onclick="onRadioBtnChecked(this)" checked>
+                    <label for="email-radio">Email</label>
+                  </div>
+                  <div>
+                    <input type="radio" id="phone-radio" name="contact-radio" value="phone" onclick="onRadioBtnChecked(this)">
+                    <label for="phone-radio">Phone</label>
+                  </div>
+                </div>
+                <div class="input-container">
+                  <input type="email" id="email" name="email" size="23" onchange="onInputChange(this)" class="input-effect" required> 
+                  <label for="email" class="required">Email</label>
+                  <span class="focus-border">
+                    <i></i>
+                  </span>
+                </div>
+                <!-- required attribute for the next inputs is given with JS, on radio btn change -->
+                <div class="invisible">
+                  <div class="input-container">
+                    <input type="text" id="country-code" name="country-code" size="3" maxlength="4" pattern="\+\d\d*" onchange="onInputChange(this)"
+                      class="input-effect" oninvalid="this.setCustomValidity('Country code must start with \'+\', followed by up to 3 digits.')"
+                      oninput="this.setCustomValidity('')" > 
+                    <label for="country-code" class="required">Code</label>
+                    <span class="focus-border">
+                      <i></i>
+                    </span>
+                  </div>
+                  <div class="input-container">
+                    <input type="tel" name="phone" id="phone" pattern="(\d|-){6,14}" size="16" onchange="onInputChange(this)" class="input-effect" 
+                      oninvalid="this.setCustomValidity('Phone must have between 6 and 14 digits (dashes allowed )')"
+                      oninput="this.setCustomValidity('')">
+                    <label for="phone" class="required">Number</label>
+                    <span class="focus-border">
+                      <i></i>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+            <fieldset class="r-half-fieldset">
+              <legend>Contact Reason</legend>
+              <div class="inner-fieldset">
+                <select name="contact-reason" id="contact-reason" class="simple-select">
+                  <option value="question">Question</option>
+                  <option value="suggestion">Suggestion</option>
+                  <option value="problem">Problem</option>
+                </select>
+                <div class="input-container title-input-area">
+                  <input type="text" id="short-title" name="short-title" onchange="onInputChange(this)" class="input-effect moving-label-input width-90" required> 
+                  <label for="short-title" class="required">Short Title</label>
+                  <span class="focus-border">
+                    <i></i>
+                  </span>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+          <div class="centered-text">
+            <label for="detailed-description">Detailed Description:</label><br>
+            <textarea id="detailed-description" name="detailed-description" rows="7"></textarea>
+          </div>
+        </div>
+      </form> 
+      <!-- We use a button outide the form to validate and submit manually, so we can manipulate the contents of the form how we want,
+      before using the mailto function to prepare an email. -->
+      <button id="submit-btn" class="button-juicy">Submit</button>
+    </main>
+
+    
+  </body>
+  
+  <script src="../js/load-header+footer.js"></script>
+  <script src="../js/forms.js"></script>
+  <script src="../js/contact-form.js"></script>
+  <script src="../js/menu-btn.js"></script>
+</html>
