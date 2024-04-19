@@ -251,7 +251,7 @@ main > h1:first-of-type {
 #header {
     position: relative;
     width: 100%;
-    background-color: #ff1a1a;
+    background-color: #ffaf46;
 }
 
 .header-area {
@@ -307,7 +307,7 @@ main > h1:first-of-type {
 
 .register-area .register-label {
     font-size: 1.1em;
-    color: rgb(25, 25, 25);
+    color: rgb(58, 43, 0);
 }
 
 .menu-btn {

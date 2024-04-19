@@ -1,7 +1,7 @@
 document.getElementById("header").innerHTML =
 `<div class="header-area">
     <a href="./" title="HOME - UniStud" class="logo">
-        <img src="../../res/pictures/logo.png" alt="HOME">
+        <img src="../static/assets/pictures/logo.png" alt="HOME">
     </a>
     <div class="menu-btn" id="menu-btn">
       <div></div>
@@ -17,7 +17,7 @@ document.getElementById("header").innerHTML =
     </nav>
     <a href="register.html" title="Register" class="register-area">
         <i class="fa fa-user fa-2x register-icon"></i>
-        <span class="register-label">Register!</span>
+        <span class="register-label">Register</span>
     </a>
 </div>`;
       
