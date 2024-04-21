@@ -10,15 +10,23 @@ document.getElementById("header").innerHTML =
     </div>
     <nav class="nav-area">
     <ul>
-        <li> <a href="./topics.html">Topics</a> </li>
-        <li> <a href="about-us.html">About Us</a> </li>
-        <li> <a href="contact-form.html">Contact Us</a> </li>
+        <li> <a href="/topics">Topics</a> </li>
+        <li> <a href="/about-us">About Us</a> </li>
+        <li> <a href="/contact-form">Contact Us</a> </li>
     </ul>
     </nav>
-    <a href="register.html" title="Register" class="register-area">
+    <div>
+    <div>
+    <div>
+    <a href="/login" title="Login" class="register-area">
+        <i class="fa fa-user fa-2x register-icon"></i>
+        <span class="register-label">Login</span>
+    </a>
+    <a href="/register" title="Register" class="register-area">
         <i class="fa fa-user fa-2x register-icon"></i>
         <span class="register-label">Register</span>
     </a>
+    </div>
 </div>`;
       
 

@@ -14,7 +14,37 @@
     <link rel="stylesheet" href="../static/assets/font-awesome-4.7.0/css/font-awesome.min.css">
   </head>
   <body>
-    <header id="header"></header>
+    <header id="header">
+      <div class="header-area">
+        <a href="./" title="HOME - UniStud" class="logo">
+            <img src="../static/assets/pictures/logo.png" alt="HOME">
+        </a>
+        <div class="menu-btn" id="menu-btn">
+          <div></div>
+          <div class="middle-line"></div>
+          <div></div>
+        </div>
+        <nav class="nav-area">
+        <ul>
+            <li> <a href="/topics">Topics</a> </li>
+            <li> <a href="/about-us">About Us</a> </li>
+            <li> <a href="/contact-form">Contact Us</a> </li>
+        </ul>
+        </nav>
+        {% if logged_in == True %}
+        <div>
+            <p>nigga</p>
+        <div>
+        {% else %}
+        <div>
+        <a href="/login" title="Login" class="register-area">
+            <i class="fa fa-user fa-2x register-icon"></i>
+            <span class="register-label">Login</span>
+        </a>
+        </div>
+        {% endif %}
+    </div>
+    </header>
 
     <main class="topics" id="banner">
         <h1>Discover our Topics</h1>
@@ -25,9 +55,9 @@
                 <img src="../static/assets/pictures/science350-.jpg" alt="Natural Science image">
                 <h2>Learning Areas</h2>
                 <ol class="fixed-li-padding1">
-                    <li><i class="fa fa-chevron-right"></i><a href="./chemistry.html">Chemistry</a></li>
-                    <li><i class="fa fa-chevron-right"></i><a href="./physics.html">Physics</a></li>
-                    <li><i class="fa fa-chevron-right"></i><a href="./biology.html">Biology</a></li>
+                    <li><i class="fa fa-chevron-right"></i><a href="/chemistry">Chemistry</a></li>
+                    <li><i class="fa fa-chevron-right"></i><a href="/physics">Physics</a></li>
+                    <li><i class="fa fa-chevron-right"></i><a href="/biology">Biology</a></li>
                 </ol>
               </article>
           
@@ -36,9 +66,9 @@
                 <img src="../static/assets/pictures/informatics350-.jpg" alt="Infromatics image">
                 <h2>Learning Areas</h2>
                 <ol class="fixed-li-padding2">
-                  <li><i class="fa fa-chevron-right"></i><a href="./software-development.html">Software Development</a></li>
-                  <li><i class="fa fa-chevron-right"></i><a href="./web-development.html">Web Development</a></li>
-                  <li><i class="fa fa-chevron-right"></i><a href="./data-science.html">Data Science</a></li>
+                  <li><i class="fa fa-chevron-right"></i><a href="/software-development">Software Development</a></li>
+                  <li><i class="fa fa-chevron-right"></i><a href="/web-development">Web Development</a></li>
+                  <li><i class="fa fa-chevron-right"></i><a href="/data-science">Data Science</a></li>
                 </ol>
               </article>
           
@@ -47,9 +77,9 @@
                 <img src="../static/assets/pictures/literature350-.jpg" alt="Literature image">
                 <h2>Learning Areas</h2>
                 <ol class="fixed-li-padding3">
-                    <li><i class="fa fa-chevron-right"></i><a href="./philosophy.html">Philosophy</a></li>
-                    <li><i class="fa fa-chevron-right"></i><a href="./poetry.html">Poetry</a></li>
-                    <li><i class="fa fa-chevron-right"></i><a href="./fiction.html">Fiction</a></li>
+                    <li><i class="fa fa-chevron-right"></i><a href="/philosophy">Philosophy</a></li>
+                    <li><i class="fa fa-chevron-right"></i><a href="/poetry">Poetry</a></li>
+                    <li><i class="fa fa-chevron-right"></i><a href="/fiction">Fiction</a></li>
                 </ol>
               </article>
             </section>
@@ -57,6 +87,5 @@
     </main>
 
   </body>
-  <script src="../static/js/load-header+footer.js"></script>
   <script src="../static/js/menu-btn.js"></script>
 </html>
