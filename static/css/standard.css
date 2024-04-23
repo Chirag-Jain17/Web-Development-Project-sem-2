@@ -294,7 +294,7 @@ main > h1:first-of-type {
 }
 
 .nav-area a:hover {
-    border-bottom: 2px dashed black;
+    color: #503613;
     cursor: pointer;
 }
 

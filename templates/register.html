@@ -39,137 +39,32 @@
         </div>
     </div>
     </header>
-    <main class="register" id="banner">
-      <h1>Register!</h1>
-      <form action="" id="register-form" class="narrow-centered">
-        <div class="inner-form">
-          <fieldset>
-            <legend>Personal Information</legend>
-            <div class="inner-fieldset">
-              <div class="input-container">
-                <input type="text" name="fname" id="fname" onchange="onInputChange(this)" class="input-effect" required>
-                <label class="required" for="fname">First Name</label>
-                <span class="focus-border">
-                  <i></i>
-                </span>
-              </div> 
-              <div class="input-container">
-                <input type="text" name="mname" id="mname" onchange="onInputChange(this)" class="input-effect">
-                <label for="mname">Middle Name</label>
-                <span class="focus-border">
-                  <i></i>
-                </span>
-              </div> 
-              <div class="input-container">
-                <input type="text" name="lname" id="lname" onchange="onInputChange(this)" class="input-effect" required>
-                <label for="lname" class="required">Last Name</label>
-                <span class="focus-border">
-                  <i></i>
-                </span>
-              </div> 
-              <div class="input-container">
-                <input type="number" min="18" max="100" name="age" id="age" onchange="onInputChange(this)" class="input-effect" required>
-                <label for="age" class="required">Age</label>
-                <span class="focus-border">
-                  <i></i>
-                </span>
-              </div> 
-            </div>
-          </fieldset>
+    <h1>Register</h1>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                {% if 'error' in message %}
+                    <p style="color: red">{{ message }}</p>
+                {% else %}
+                    <p style="color: green">{{ message }}</p>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    <form action="{{ url_for('register') }}" method="POST">
+        <label for="username">Username:</label><br>
+        <input type="text" id="username" name="username" required><br>
+        <label for="age">Age:</label><br>
+        <input type="number" id="age" name="age" required><br>
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br>
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password" required><br>
+        <label for="confirm_password">Re-type Password:</label><br>
+        <input type="password" id="confirm_password" name="confirm_password" required><br>
+        <input type="submit" value="Register">
+    </form>
 
-          <!-- No payment info fields - our website doesn't have paid content -->
-
-          <fieldset>
-            <legend>Account credentials</legend>
-            <div class="inner-fieldset">
-
-              <div class="input-container">
-                <input type="text" name="uname" id="uname" onchange="onInputChange(this)" class="input-effect" required>
-                <label for="uname" class="required">User Name</label>
-                <span class="focus-border">
-                  <i></i>
-                </span>
-              </div> 
-              <div class="input-container">
-                <input type="email" name="email" id="email" onchange="onInputChange(this)" class="input-effect" required>
-                <label for="email" class="required">Email</label>
-                <span class="focus-border">
-                  <i></i>
-                </span>
-              </div> 
-              <div class="input-container">
-                <input type="password" name="password" id="password" onchange="onInputChange(this)" class="input-effect" required>
-                <label for="password" class="required">Password</label>
-                <span class="focus-border">
-                  <i></i>
-                </span>
-              </div> 
-              <div class="input-container">
-                <input type="password" name="r-password" id="r-password" onchange="onInputChange(this)" class="input-effect" required>
-                <label for="r-password" class="required">Repeat Password</label>
-                <span class="focus-border">
-                  <i></i>
-                </span>
-              </div> 
-              <div>
-                <input type="checkbox" id="update-emails" name="update-emails" checked>
-                <label for="update-emails">Send update emails</label>
-              </div>
-            </div>
-          </fieldset>
-          <p class="centered-text questionnaire-title">Tell us a few things about your interests</p>
-          <div class="questionnaire">
-            <div class="row">
-              <label for="register-reason" class="bold">Reason for registering:</label>
-              <select name="register-reason" id="register-reason" class="simple-select reason-select">
-                <option value="growth">Personal growth</option>
-                <option value="employment">Future employment advantage</option>
-                <option value="requirement">Professional requirement</option>
-              </select>
-            </div>
-            <div class="row">
-              <p class="bold">Education level:</p>
-              <div class="selectables">
-                <div>
-                  <input type="radio" name="highschool" id="highschool">
-                  <label for="highschool">Highschool</label>
-                </div>
-                <div>
-                  <input type="radio" name="university" id="university" checked>
-                  <label for="university">University</label>
-                </div>
-                <div>
-                  <input type="radio" name="master's" id="master's">
-                  <label for="master's">Master's</label>
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <p class="bold">Topics of interest (multiple):</p>
-              <div class="selectables">
-                <div>
-                  <input type="checkbox" name="topic" id="science" checked>
-                  <label for="science">Science</label>
-                </div>
-                <div>
-                  <input type="checkbox" name="topic" id="informatics" checked>
-                  <label for="informatics">Informatics</label>
-                </div>
-                <div>
-                  <input type="checkbox" name="topic" id="literature" checked>
-                  <label for="literature">Literature</label>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </form>
-      <!-- button outside the form for custom validation and behaviour -->
-      <div class="button-area">
-        <button id="register-btn" onclick="validateRegisterForm()" class="button-juicy">Register!</button></br>
-      </div>
-    </main>
-    
   </body>
   <script src="../static/js/forms.js"></script>
   <script src="../static/js/register-form.js"></script>

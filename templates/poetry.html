@@ -33,13 +33,13 @@
         </nav>
         {% if logged_in == True %}
         <div>
-            <p>nigga</p>
+            <p>{{username}}</p>
         <div>
         {% else %}
         <div>
         <a href="/login" title="Login" class="register-area">
             <i class="fa fa-user fa-2x register-icon"></i>
-            <span class="register-label">Login</span>
+            <span class="register-label">Log in</span>
         </a>
         </div>
         {% endif %}
